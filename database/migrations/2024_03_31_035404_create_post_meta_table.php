@@ -16,7 +16,7 @@ class CreatePostMetaTable extends Migration
         Schema::create('post_meta', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('postId');
-            $table->foreign('postId')->references('id')->on('post')->cascadeOnDelete();
+            $table->foreign('postId')->references('id')->on('post')->onDelete('cascade');
             $table->string('key', 50);
             $table->text('content');
             $table->timestamps();

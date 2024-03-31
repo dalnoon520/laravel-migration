@@ -16,7 +16,7 @@ class CreatePostCommentTable extends Migration
         Schema::create('post_comment', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('postId');
-            $table->foreign('postId')->references('id')->on('post')->cascadeOnDelete();
+            $table->foreign('postId')->references('id')->on('post')->onDelete('cascade');
             $table->string('title', 100);
             $table->string('published', 1);
             $table->timestamp('createdAt');
