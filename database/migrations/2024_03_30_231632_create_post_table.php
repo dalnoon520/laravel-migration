@@ -13,7 +13,7 @@ class CreatePostTable extends Migration
      */
     public function up()
     {
-        Schema::table('post', function (Blueprint $table) {
+        Schema::create('post', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('authorId');
             $table->foreign('authorId')->references('id')->on('users')->onDelete('cascade');
