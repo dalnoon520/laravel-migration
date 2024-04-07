@@ -21,10 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('mobile', 15);
             $table->string('email', 50)->unique();
             $table->string('passwordHash', 32);
-            $table->timestamp('registerAt');
-            $table->timestamp('lastLogin');
-            $table->tinyText('intro');
-            $table->text('profile');
+            $table->timestamp('registerAt')->nullable();
+            $table->timestamp('lastLogin')->nullable();
+            $table->tinyText('intro')->nullable();
+            $table->text('profile')->nullable();
             $table->timestamps();
         });
     }
